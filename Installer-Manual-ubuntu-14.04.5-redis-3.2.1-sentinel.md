@@ -1,4 +1,4 @@
-Redis缓存Key-Value数据库安装
+Redis缓存Key-Value数据库安装（sentinel模式）
 ================================
 #### 下载
 ```
