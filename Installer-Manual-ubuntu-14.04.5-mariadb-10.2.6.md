@@ -8,6 +8,7 @@ ubuntu14.04.5安装mariadb10.2.6
 ```
 ALTER TABLE `tablename` ENGINE=MARIA TRANSACTIONAL=1;
 ```
+###### 注：经过测试此版本MARIA引擎不支持事务，默认是InnoDB，它支持事务。
 ###### MariaDB与 MySQL 相比较，MariaDB 更强的地方在于：
 ```
 Maria 存储引擎
