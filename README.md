@@ -1,20 +1,21 @@
 # docs
-Installer Manual Guide.
+## Installer Manual Guide.
+## 此安装文档，操作系统: ubuntu-14.04.5 LTS trusty.
 
 |名称|说明|
 |---|---|
-Installer-Manual-ubuntu-14.04.5 LTS trusty.md |	安装Ubuntu-14.04.5操作系统
-Installer-Manual-ubuntu-14.04.5-git-server-nonweb.md | Ubuntu-14.04.5安装无web页面git
-Installer-Manual-ubuntu-14.04.5-jdk-1.8.0_112.md | Ubuntu-14.04.5安装jdk1.8.0_121
-Installer-Manual-ubuntu-14.04.5-mariadb-10.2.6.md |	Ubuntu-14.04.5安装mariadb-10.2.6
-Installer-Manual-ubuntu-14.04.5-mongodb-3.2.8.md | Ubuntu-14.04.5安装mongodb-3.2.8
-Installer-Manual-ubuntu-14.04.5-mysql-5.7.17.md | Ubuntu-14.04.5安装mysql-5.7.17
-Installer-Manual-ubuntu-14.04.5-nginx-1.10.3.md | Ubuntu-14.04.5安装nginx-1.10.3
-Installer-Manual-ubuntu-14.04.5-rabbitmq-3.6.5.md |	Ubuntu-14.04.5安装rabbitmq-3.6.5
-Installer-Manual-ubuntu-14.04.5-redis-3.2.1-sentinel.md | Ubuntu-14.04.5安装redis-3.2.1-sentinel
-Installer-Manual-ubuntu-14.04.5-redis-3.2.9-cluster.md | Ubuntu-14.04.5安装redis-3.2.9-cluster
-Installer-Manual-ubuntu-14.04.5-rocketmq-3.5.8.md |	Ubuntu-14.04.5安装rocketmq-3.5.8
-Installer-Manual-ubuntu-14.04.5-zookeeper-3.4.8.md | Ubuntu-14.04.5安装zookeeper-3.4.8
+Ubuntu-14.04.5 LTS trusty.md |	安装Ubuntu-14.04.5操作系统
+Git-Server(non-web-html) | Ubuntu-14.04.5安装无web页面git
+Jdk-1.8.0_112.md | Ubuntu-14.04.5安装jdk1.8.0_121
+Mariadb-10.2.6.md |	Ubuntu-14.04.5安装mariadb-10.2.6
+Mongodb-3.2.8.md | Ubuntu-14.04.5安装mongodb-3.2.8
+Mysql-5.7.17.md | Ubuntu-14.04.5安装mysql-5.7.17
+Nginx-1.10.3.md | Ubuntu-14.04.5安装nginx-1.10.3
+Rabbitmq-3.6.5.md |	Ubuntu-14.04.5安装rabbitmq-3.6.5
+Redis-3.2.1-sentinel.md | Ubuntu-14.04.5安装redis-3.2.1-sentinel
+Redis-3.2.9-cluster.md | Ubuntu-14.04.5安装redis-3.2.9-cluster
+Rocketmq-3.5.8.md |	Ubuntu-14.04.5安装rocketmq-3.5.8
+Zookeeper-3.4.8.md | Ubuntu-14.04.5安装zookeeper-3.4.8
 
 服务器软件安装指南
 =================================
