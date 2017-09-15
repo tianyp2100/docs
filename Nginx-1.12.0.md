@@ -1,55 +1,57 @@
 Nginx高性能的HTTP和反向代理服务器安装
 ====================================
-#### 1:下载
+#### 1.安装参数: ubuntu: 14.04.5; nginx: 1.12.0
+#### 2:下载安装包
 ```
 http://nginx.org/en/download.html
 ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
-use:
-pcre-8.38.tar.gz
-nginx-1.10.3.tar.gz
 ```
-#### 2:安装依赖
 ```
------------------------------------
-#pcre:支持rewrite功能
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz
+wget https://nginx.org/download/nginx-1.12.0.tar.gz
+```
+#### 3:安装依赖
+```
+1. 安装pcre: 支持rewrite等regular功能
 tar zxvf pcre-8.38.tar.gz
 cd pcre-8.38
 ./configure
 make && make install
 man pcre
------------------------------------
-#安装openssl [支持ssl功能]
+2. 安装openssl: 支持ssl功能
 apt-get install openssl*
------------------------------------
-#gzip 类库安装[支持zlib数据头/压缩数据]
+3. 安装gzip: 支持zlib数据头/压缩数据
 apt-get install zlib*
------------------------------------
 ```
-#### 3:解压编译安装
+#### 4:创建目录、用户、组
 ```
-tar zxvf nginx-1.10.3.tar.gz
-cd nginx-1.10.3
+mkdir -p /usr/local/nginx
+groupadd nginx
+useradd nginx -g nginx -d /usr/local/nginx -s /sbin/nologin
+```
+#### 5:解压、编译、安装
+```
+tar zxvf nginx-1.12.0.tar.gz
+cd nginx-1.12.0
 mkdir -p /usr/local/nginx
 ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_v2_module --with-http_stub_status_module --with-pcre --with-stream
 make && make install
 ```
-#### 4:用户和组和所属
+#### 6:设置目录所属
 ```
-groupadd nginx
-useradd nginx -g nginx -d /usr/local/nginx -s /bin/sh
 chown -R nginx:nginx /usr/local/nginx
 ```
-#### 5:版本和模块(若错误:`附录1`)
+#### 7:检查安装：版本和模块(若错误:`附录1`)
 ```
 /usr/local/nginx/sbin/nginx -V
 ----------------------------------
-nginx version: nginx/1.10.3
+nginx version: nginx/1.12.0
 built by gcc 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
 built with OpenSSL 1.0.1f 6 Jan 2014
 TLS SNI support enabled
 configure arguments: --prefix=/usr/local/nginx --with-http_ssl_module --with-http_v2_module --with-http_stub_status_module --with-pcre
 ```
-#### 6:测试配置文件是否正确(配置文件参考:`附录3`)
+#### 8:测试配置文件是否正确(配置文件参考:`附录3`)
 ```
 #建议每次启动检查
 /usr/local/nginx/sbin/nginx -t
@@ -57,15 +59,16 @@ configure arguments: --prefix=/usr/local/nginx --with-http_ssl_module --with-htt
 nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
 nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
 ```
-#### 7:启动和热启动和停止
+#### 9:启动和热启动和停止
 ```
+# 启动服务
 /usr/local/nginx/sbin/nginx
-# 不断开请求的热重启
+# 热重启 - 不断开请求的
 kill -HUP `cat /usr/local/nginx/logs/nginx.pid`
 # 停止服务(主进程退出)
 kill -QUIT `cat /usr/local/nginx/logs/nginx.pid`
 ```
-#### 7:启动测试(80端口占用:`附录2`)
+#### 10:启动测试(80端口占用:`附录2`)
 ```
 #进程
 ps -ef |grep nginx
@@ -94,7 +97,9 @@ aolserver 949 www-data    4u  IPv4   9980      0t0  TCP localhost:http (LISTEN)
 --------------------------
 kill -9 949
 ```
-### 附录3:
+#### 
+
+### 附录最后(nginx.conf):
 ```
 #nginx所用的用户和组,windows下不指定
 user  nginx nginx;
