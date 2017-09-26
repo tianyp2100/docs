@@ -19,9 +19,9 @@ cd pcre-8.38
 make && make install
 man pcre
 2. 安装openssl: 支持ssl功能
-apt-get install openssl*
+apt-get install -y openssl*
 3. 安装gzip: 支持zlib数据头/压缩数据
-apt-get install zlib*
+apt-get install -y zlib*
 ```
 #### 4:创建目录、用户、组
 ```
