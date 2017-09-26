@@ -165,11 +165,11 @@ server {
         
         error_page  404              /404-443.html;
         location = /404-443.html{
-                root html/443;
-        }
+                root /usr/local/nginx/html/443; #全路径
+   	}
         error_page   500 502 503 504  /50x-443.html;
         location = /50x-443.html {
-                root html/443;
+               root /usr/local/nginx/html/443;
         }
 }
 ```
