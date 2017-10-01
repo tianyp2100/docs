@@ -25,42 +25,22 @@ groupadd redis
 useradd redis -g redis -d /redis/ -s /sbin/nologin
 
 mkdir -p /redis/data
+mkdir -p /redis/pid
 mkdir -p /redis/conf
 mkdir -p /redis/log
-mkdir -p /redis/pid
 mkdir -p /redis/tmp
 ```
 #### 4：配置文件redis.conf，内容见附录1，（暂2nodes）
 ##### 创建集群目录，创建3个节点，其对应端口7771 7772 7773
 ##### redis的cluster模式，需要至少3个节点，若集群，至少6个端口，3主3从
 ```
-注：创建各个端口独立的文件夹
--------------------------
-mkdir -p /redis/data/7771
-mkdir -p /redis/conf/7771
-mkdir -p /redis/log/7771
-mkdir -p /redis/pid/7771
-mkdir -p /redis/tmp/7771
-mkdir -p /redis/data/7772
-mkdir -p /redis/conf/7772
-mkdir -p /redis/log/7772
-mkdir -p /redis/pid/7772
-mkdir -p /redis/tmp/7772
-mkdir -p /redis/data/7773
-mkdir -p /redis/conf/7773
-mkdir -p /redis/log/7773
-mkdir -p /redis/pid/7773
-mkdir -p /redis/tmp/7773
+注：配置文件，复制附录1内容，到文件下:wq
 vim redis.conf
-注：复制附录1内容，到文件下:wq
 -------------------------
-cp redis.conf  /redis/conf/7771
-cp redis.conf  /redis/conf/7772
-cp redis.conf  /redis/conf/7773
-注：替换7771到7772，在vim命令模式下运行:
-vim /redis/conf/7772/redis.conf
-vim /redis/conf/7773/redis.conf
--------------------------
+cp redis.conf  /redis/conf/redis_7771.conf
+注：复制、替换7771到7772/7773，在vim命令模式下运行:
+cp redis_7771.conf redis_7772.conf
+cp redis_7771.conf redis_7773.conf
 :%s/7771/7772/g
 :%s/7771/7773/g
 -------------------------
@@ -69,9 +49,9 @@ chown -R redis.redis /redis/
 ```
 #### 5：启动redis各节点
 ```
-/usr/local/bin/redis-server /redis/conf/7771/redis.conf
-/usr/local/bin/redis-server /redis/conf/7772/redis.conf
-/usr/local/bin/redis-server /redis/conf/7773/redis.conf
+/usr/local/bin/redis-server /redis/conf/redis_7771.conf
+/usr/local/bin/redis-server /redis/conf/redis_7772.conf
+/usr/local/bin/redis-server /redis/conf/redis_7773.conf
 ```
 #### 6：查看服务
 ```
@@ -150,20 +130,20 @@ port 7771
 # 守护进程开启,默认服务从后台启动
 daemonize yes
 # pid文件
-pidfile /redis/pid/7771/redis.pid
+pidfile /redis/pid/redis-7771.pid
 # 日志级别
 loglevel verbose
 # 日志文件位置
-logfile /redis/log/7771/redis.log
+logfile /redis/log/redis-7771.log
 ## redis持久化rdb,AOF
 # redis持久化文件路径,默认为当前路径
-dir /redis/data/7771
+dir /redis/data
 # redis持久化文件名称
-dbfilename dump.rdb
+dbfilename dump-7771.rdb
 # 开启AOF
 appendonly yes
 # AOF文件名称
-appendfilename "appendonly.aof"
+appendfilename "appendonly-7771.aof"
 # 子进程在做rewrite时，主进程不调用fsync（由内核默认调度）
 no-appendfsync-on-rewrite yes
 ## REPLICATION
@@ -226,7 +206,7 @@ hz 10
 aof-rewrite-incremental-fsync yes
 # slaveof <masterip> <masterport>
 # masterauth <master-password>
-# requirepass foobared
+# requirepass foobared                                               
 ```
 ### 问题记录
 
