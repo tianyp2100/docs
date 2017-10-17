@@ -43,6 +43,7 @@ sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirrors.tuna.tsing
 ##### 1.3 安装:
 ###### Once the key is imported and the repository added you can install MariaDB with:
 ```
+# 此步骤，必须重做！！！
 sudo apt-get update
 sudo apt-get install mariadb-server
 ```
