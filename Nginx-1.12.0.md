@@ -212,6 +212,18 @@ server {
         }
 }
 ```
+#### 配置：html页面转发(http-conf/目录下)，页面地址:/home/html，下，url路径正则转发磁盘目录:
+##### 比如：http://h.loveshare.me/aaa 转发 /root/html/aaa/index.html
+```
+server {
+        listen 80;
+        server_name h.loveshare.me;
+        location /$1{
+                root /home/html/game/$1;
+                index  index.html index.htm;
+        }
+}
+```
 #### 配置：web页面和api接口同域名，正则路径，(http-conf/目录下)，页面地址:/home/html:
 ```
 location ^~ /web/ {
