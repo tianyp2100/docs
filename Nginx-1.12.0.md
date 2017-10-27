@@ -212,14 +212,14 @@ server {
         }
 }
 ```
-#### 配置：html页面转发(http-conf/目录下)，页面地址:/home/html，下，url路径正则转发磁盘目录:
+#### 配置：html页面转发(http-conf/目录下)，页面地址:/home/html，下，url路径正则转发磁盘目录（同上）:
 ##### 比如：http://h.loveshare.me/aaa 转发 /root/html/aaa/index.html
 ```
 server {
         listen 80;
         server_name h.loveshare.me;
-        location /$1{
-                root /home/html/game/$1;
+        location /{
+                root /home/html/game/;
                 index  index.html index.htm;
         }
 }
