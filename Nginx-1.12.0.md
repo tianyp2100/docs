@@ -219,7 +219,7 @@ server {
         listen 80;
         server_name h.loveshare.me;
         location /{
-                root /home/html/game/;
+                root /home/html/game;
                 index  index.html index.htm;
         }
 }
