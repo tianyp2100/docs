@@ -87,6 +87,13 @@ Welcome to nginx!
 ln -s /usr/local/lib/libpcre.so.1 /lib
 ln -s /usr/local/lib/libpcre.so.1 /lib64
 ```
+
+```
+[Error]:
+./configure: error: SSL modules require the OpenSSL library......
+[Solve]:
+apt-get install -y libssl-dev
+```
 #### 附录2:
 ```
 #查看80的pid
