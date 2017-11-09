@@ -26,7 +26,7 @@ FederatedX 存储引擎
 支持对 Unicode 的排序
 ```
 ### 1.获取安装MariaDB:
-###### 1.1 下载:[链接](https://downloads.mariadb.org/mariadb/+releases/)
+###### 1.1 下载:[链接](https://downloads.mariadb.org/mariadb/+releases/)，无需下载，此处在线安装。
 ```
 https://downloads.mariadb.org/mariadb/+releases/
 https://downloads.mariadb.org/mariadb/repositories/#mirror=neusoft&distro=Ubuntu&distro_release=trusty--ubuntu_trusty&version=10.2
