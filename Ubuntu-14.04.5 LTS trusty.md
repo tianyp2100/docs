@@ -47,6 +47,7 @@ nameserver 192.168.1.1
 ```
 hostname nginx
 #重启终端可见!
+# 永久修改: vim /etc/hostname，重启！
 ```
 ##### 3.5:更新软件包
 ```
