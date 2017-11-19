@@ -257,27 +257,27 @@ This command was run using /hadoop/bin/hadoop-2.9.0/share/hadoop/common/hadoop-c
 ```
 ---
 #### 温馨提示：此处192.168.1.203（此处虚拟机），配置已全部完成，现在备份主机（192.168.1.203）镜像导入204和205其他两台主机（此处虚拟机：VirtualBox-5.1.30）！
-#### 7: 主机备份的镜像导入其他两台从主机（203为主）
-##### 7.1: 修改204和205的ip和hostname：192.168.1.204 (hadoop-slave01), 192.168.1.205 (hadoop-slave02)，重启！
-##### 7.2: ping双方的ip测试网络连通性(例: 192.168.1.203 (hadoop-master)):
+#### 8: 主机备份的镜像导入其他两台从主机（203为主）
+##### 8.1: 修改204和205的ip和hostname：192.168.1.204 (hadoop-slave01), 192.168.1.205 (hadoop-slave02)，重启！
+##### 8.2: ping双方的ip测试网络连通性(例: 192.168.1.203 (hadoop-master)):
 ```
 $ ping 192.168.1.204
 $ ping 192.168.1.205
 $ ping hadoop-slave01
 $ ping hadoop-slave02
 ```
-##### 7.3: 添加免密码ssh集群用户公钥/授权:
-###### 7.3.1: 保证了三台主机电脑ssh都能连接到本地localhost，还需要让master主机免密码登录slave01和slave02主机。在master执行如下命令，将master的id_rsa.pub传送给两台slave主机。
+##### 8.3: 添加免密码ssh集群用户公钥/授权:
+###### 8.3.1: 保证了三台主机电脑ssh都能连接到本地localhost，还需要让master主机免密码登录slave01和slave02主机。在master执行如下命令，将master的id_rsa.pub传送给两台slave主机。
 ```
 $ scp ~/.ssh/id_rsa.pub hadoop@hadoop-slave01:/hadoop/
 $ scp ~/.ssh/id_rsa.pub hadoop@hadoop-slave02:/hadoop/
 ```
-###### 7.3.2:接着在hadoop-slave01、hadoop-slave02主机上将hadoop-master的公钥加入各自authorized_keys(用户公钥):
+###### 8.3.2:接着在hadoop-slave01、hadoop-slave02主机上将hadoop-master的公钥加入各自authorized_keys(用户公钥):
 ```
 $ cat /hadoop/id_rsa.pub >> ~/.ssh/authorized_keys
 $ rm /hadoop/id_rsa.pub
 ```
-###### 7.3.3: 集群Master免密码ssh登录Slave测试（hadoop-master上执行）:
+###### 8.3.3: 集群Master免密码ssh登录Slave测试（hadoop-master上执行）:
 ```
 $ ssh hadoop-slave01
 $ ssh hadoop-slave02
@@ -288,6 +288,15 @@ Host hadoop-master
   user hadoop1
 Host hadoop-slave01
   user hadoop2
+```
+#### 9: 格式化分布式文件系统，启动Hadoop集群 (hadoop-master上执行):、
+```
+$ /hadoop/bin/hadoop-2.9.0/bin/hdfs namenode -format
+$ /hadoop/bin/hadoop-2.9.0/sbin/start-all.sh
+```
+#### 10: 关闭Hadoop集群
+```
+$ /hadoop/bin/hadoop-2.9.0/sbin/stop-all.sh
 ```
 
 
