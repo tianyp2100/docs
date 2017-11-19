@@ -3,7 +3,6 @@
 
 |名称|说明|
 |---|---|
-Ubuntu-14.04.5 LTS trusty.md |	安装Ubuntu-14.04.5操作系统
 Git-Server(non-web-html) | Ubuntu-14.04.5安装无web页面git
 Jdk-1.8.0_112.md | Ubuntu-14.04.5安装jdk1.8.0_121
 Mariadb-10.2.6.md |	Ubuntu-14.04.5安装mariadb-10.2.6
