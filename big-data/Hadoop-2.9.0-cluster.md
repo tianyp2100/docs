@@ -1,6 +1,14 @@
 Hadoop-2.9.0集群安装
 ================================
-### 1.安装参数: ubuntu: 14.04.5; hadoop: 2.9.0; jdk: 1.8.0_121
+### 1.安装说明
+#### 1.1: 安装参数: ubuntu: 14.04.5; hadoop: 2.9.0; jdk: 1.8.0_121
+#### 1.2: 配置集群机器：三台主机（或虚拟机）搭建分布式集群环境(Ubuntu-14.04.5)(同一局域网):
+|ip|hostname|comment
+|---|---|---
+|192.168.1.203| hadoop-master| Master
+|192.168.1.204| hadoop-slave01| Slave 01    
+|192.168.1.205| hadoop-slave02| Slave 02  
+#### 温馨提示：只准备一台机器192.168.1.203（此处虚拟机），以下操作先在203上完成，最后备份主机镜像导入修改ip为集群！
 ### 2:下载安装软件包
 #### 2.1: hadoop安装包下载地址
 ```
@@ -68,3 +76,120 @@ ii  rsync                              3.1.0-2ubuntu0.2                         
 ###### 注：ssh目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。必须安装并且保证sshd一直运行，以便用Hadoop脚本管理远端Hadoop守护进程。
 ###### 注：rsync是类unix系统下的数据镜像备份工具。使用快速增量备份（第一次同步时rsync会复制全部内容，但在下一次只传输修改过的文件。）工具Remote Sync可以远程同步，支持本地复制，或者与其他SSH、rsync主机同步。rsync可以镜像保存整个目录树和文件系统。可以很容易做到保持原来文件的权限、时间、软硬链接等等。rsync 在传输数据的过程中可以实行压缩及解压缩操作，因此可以使用更少的带宽。可以使用scp、ssh等方式来传输文件，当然也可以通过直接的socket连接。支持匿名传输，以方便进行网站镜象。
 ###### 注：openssh-server生成ssh密钥（私钥、公钥）
+### 4. 创建目录、用户、组、密码、所属：
+```
+$ mkdir -p /hadoop/bin
+$ mkdir -p /hadoop/tmp
+$ mkdir -p /hadoop/dfs/data
+$ mkdir -p /hadoop/dfs/name
+$ groupadd hadoop
+$ useradd hadoop -g hadoop -d /hadoop -s /bin/bash
+$ grep hadoop /etc/passwd
+$ passwd hadoop
+$ chown -R hadoop:hadoop /hadoop
+```
+###### 注：查看用户的根目录: $ ls ~
+#### 5: 免密码ssh设置
+##### 5.1: 生成密钥和添加免密码ssh集群用户公钥/授权，配置ssh无密码登录本机和访问集群机器(注:~ = $HOME):
+```
+$ ssh-keygen -t dsa -P '' -f ~/.ssh/id_rsa 
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+##### 5.2: 检查：确认能否不输入口令就用ssh登录localhost:
+```
+$ ssh localhost
+```
+###### 注: 第一次"Are you sure you want to continue connecting (yes/no)? "，yes就好，进入后可用: $ exit 退出。 
+#### 6: 安装hadoop
+```
+$ tar zxvf hadoop-2.9.0.tar.gz -C /hadoop/bin/
+```
+#### 6: 修改Hadoop配置文件
+##### 注：Hadoop配置文件都位于此目录下：/hadoop/bin/hadoop-2.9.0/etc/hadoop/
+##### 6.1: 修改JAVA_HOME：设置为Java安装根路径（hadoop/yarn）:
+###### 6.1.1: 修改配置文件:hadoop-env.sh
+```
+$ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/hadoop-env.sh
+```
+###### 注：hadoop-env.sh文件“# The java implementation to use.”后加入: 
+```
+export JAVA_HOME=/usr/local/jdk1.8.0_121
+```
+###### 6.1.1: 修改配置文件:yarn-env.sh
+```
+$ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/yarn-env.sh
+```
+###### 注：yarn-env.sh文件“# some Java parameters.”后加入: 
+```
+export JAVA_HOME=/usr/local/jdk1.8.0_121
+```
+##### 6.2: 修改slaves
+###### 注：把DataNode的主机名写入该文件，每行一个。这里让hadoop-master节点主机仅作为NameNode使用。
+```
+$ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/slaves 
+hadoop-slave01
+hadoop-slave02
+```
+##### 6.3: 修改core-site.xml
+```
+$ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/core-site.xml
+<configuration>
+  <property>
+	  <name>hadoop.tmp.dir</name>
+	  <value>file:/hadoop/tmp</value>
+	  <description>Abase for other temporary directories.</description>
+  </property>
+  <property>
+	  <name>fs.defaultFS</name>
+	  <value>hdfs://hadoop-master:9000</value>
+  </property>
+</configuration>
+```
+##### 6.4: 修改hdfs-site.xml
+```
+$ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/hdfs-site.xml
+<configuration>
+	<property>
+		<name>dfs.replication</name>
+		<value>3</value>
+	</property>
+	<property>  
+		<name>dfs.namenode.name.dir</name>  
+		<value>file:/hadoop/dfs/name</value>  
+	</property>  
+	<property>  
+		<name>dfs.datanode.data.dir</name>  
+		<value>file:/hadoop/dfs/data</value>  
+	</property>  
+</configuration>
+```
+##### 6.5: 修改mapred-site.xml
+```
+$ cp /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml.template /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml
+$ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml
+<configuration>
+<property>
+	<name>mapreduce.framework.name</name>
+	<value>yarn</value>
+</property>
+</configuration>
+```
+##### 6.6: 修改yarn-site.xml文件:
+```
+$ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/yarn-site.xml 
+<configuration>
+<!-- Site specific YARN configuration properties -->
+  <property>
+	  <name>yarn.nodemanager.aux-services</name>
+	  <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+	  <name>yarn.resourcemanager.hostname</name>
+	  <value>hadoop-master</value>
+  </property>
+</configuration>
+```
+
+
+
+
