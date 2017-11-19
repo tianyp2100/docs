@@ -232,6 +232,8 @@ $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/yarn-site.xml
   </property>
 </configuration>
 ```
+---
+#### 温馨提示：此处192.168.1.203（此处虚拟机），配置已全部完成，现在备份主机（192.168.1.203）镜像导入204和205其他两台主机（此处虚拟机：VirtualBox-5.1.30）！
 
 
 
