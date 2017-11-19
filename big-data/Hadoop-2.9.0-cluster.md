@@ -212,10 +212,10 @@ $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/hdfs-site.xml
 $ cp /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml.template /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml
 $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml
 <configuration>
-<property>
-	<name>mapreduce.framework.name</name>
-	<value>yarn</value>
-</property>
+	<property>
+		<name>mapreduce.framework.name</name>
+		<value>yarn</value>
+	</property>
 </configuration>
 ```
 ##### 6.6: 修改yarn-site.xml文件:
