@@ -120,7 +120,7 @@ ii  rsync                              3.1.0-2ubuntu0.2                         
 ###### 注：ssh目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。必须安装并且保证sshd一直运行，以便用Hadoop脚本管理远端Hadoop守护进程。
 ###### 注：rsync是类unix系统下的数据镜像备份工具。使用快速增量备份（第一次同步时rsync会复制全部内容，但在下一次只传输修改过的文件。）工具Remote Sync可以远程同步，支持本地复制，或者与其他SSH、rsync主机同步。rsync可以镜像保存整个目录树和文件系统。可以很容易做到保持原来文件的权限、时间、软硬链接等等。rsync 在传输数据的过程中可以实行压缩及解压缩操作，因此可以使用更少的带宽。可以使用scp、ssh等方式来传输文件，当然也可以通过直接的socket连接。支持匿名传输，以方便进行网站镜象。
 ###### 注：openssh-server生成ssh密钥（私钥、公钥）
-### 4. 创建目录、用户、组、密码、所属：
+### 4. 创建目录、用户、组、密码、所属 (此处三台主机均为)：
 ```
 $ mkdir -p /hadoop/bin
 $ mkdir -p /hadoop/tmp
@@ -129,8 +129,8 @@ $ mkdir -p /hadoop/dfs/name
 $ groupadd hadoop
 $ useradd hadoop -g hadoop -d /hadoop -s /bin/bash
 $ grep hadoop /etc/passwd
-$ passwd hadoop
 $ chown -R hadoop:hadoop /hadoop
+$ passwd hadoop
 ```
 ###### 注：查看用户的根目录: $ ls ~
 #### 5: 免密码ssh设置
@@ -179,13 +179,13 @@ hadoop-slave02
 $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/core-site.xml
 <configuration>
   <property>
-	  <name>hadoop.tmp.dir</name>
-	  <value>file:/hadoop/tmp</value>
-	  <description>Abase for other temporary directories.</description>
+      <name>hadoop.tmp.dir</name>
+      <value>file:/hadoop/tmp</value>
+      <description>Abase for other temporary directories.</description>
   </property>
   <property>
-	  <name>fs.defaultFS</name>
-	  <value>hdfs://hadoop-master:9000</value>
+      <name>fs.defaultFS</name>
+      <value>hdfs://hadoop-master:9000</value>
   </property>
 </configuration>
 ```
@@ -193,18 +193,18 @@ $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/core-site.xml
 ```
 $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/hdfs-site.xml
 <configuration>
-	<property>
-		<name>dfs.replication</name>
-		<value>3</value>
-	</property>
-	<property>  
-		<name>dfs.namenode.name.dir</name>  
-		<value>file:/hadoop/dfs/name</value>  
-	</property>  
-	<property>  
-		<name>dfs.datanode.data.dir</name>  
-		<value>file:/hadoop/dfs/data</value>  
-	</property>  
+  <property>
+      <name>dfs.replication</name>
+      <value>3</value>
+  </property>
+  <property>  
+      <name>dfs.namenode.name.dir</name>  
+      <value>file:/hadoop/dfs/name</value>  
+  </property>  
+  <property>  
+      <name>dfs.datanode.data.dir</name>  
+      <value>file:/hadoop/dfs/data</value>  
+  </property>  
 </configuration>
 ```
 ##### 6.5: 修改mapred-site.xml
@@ -212,10 +212,10 @@ $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/hdfs-site.xml
 $ cp /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml.template /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml
 $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/mapred-site.xml
 <configuration>
-	<property>
-		<name>mapreduce.framework.name</name>
-		<value>yarn</value>
-	</property>
+  <property>
+      <name>mapreduce.framework.name</name>
+      <value>yarn</value>
+  </property>
 </configuration>
 ```
 ##### 6.6: 修改yarn-site.xml文件:
@@ -224,12 +224,12 @@ $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/yarn-site.xml
 <configuration>
 <!-- Site specific YARN configuration properties -->
   <property>
-	  <name>yarn.nodemanager.aux-services</name>
-	  <value>mapreduce_shuffle</value>
+      <name>yarn.nodemanager.aux-services</name>
+      <value>mapreduce_shuffle</value>
   </property>
   <property>
-	  <name>yarn.resourcemanager.hostname</name>
-	  <value>hadoop-master</value>
+      <name>yarn.resourcemanager.hostname</name>
+      <value>hadoop-master</value>
   </property>
 </configuration>
 ```
@@ -246,7 +246,7 @@ export HADOOP_HOME=/hadoop/bin/hadoop-2.9.0
 export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 $ source /etc/profile
-
+$ chown -R hadoop:hadoop /hadoop
 $ hadoop version
 Hadoop 2.9.0
 Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 756ebc8394e473ac25feac05fa493f6d612e6c50
@@ -257,6 +257,38 @@ This command was run using /hadoop/bin/hadoop-2.9.0/share/hadoop/common/hadoop-c
 ```
 ---
 #### 温馨提示：此处192.168.1.203（此处虚拟机），配置已全部完成，现在备份主机（192.168.1.203）镜像导入204和205其他两台主机（此处虚拟机：VirtualBox-5.1.30）！
+#### 7: 主机备份的镜像导入其他两台从主机（203为主）
+##### 7.1: 修改204和205的ip和hostname：|192.168.1.204 (hadoop-slave01), |192.168.1.205 (hadoop-slave02)，重启！
+##### 7.2: ping双方的ip测试网络连通性(例: 192.168.1.203 (hadoop-master)):
+```
+$ ping 192.168.1.201
+$ ping 192.168.1.202
+$ ping hadoop-slave01
+$ ping hadoop-slave02
+```
+##### 7.3: 添加免密码ssh集群用户公钥/授权:
+###### 7.3.1: 保证了三台主机电脑ssh都能连接到本地localhost，还需要让master主机免密码登录slave01和slave02主机。在master执行如下命令，将master的id_rsa.pub传送给两台slave主机。
+```
+$ scp ~/.ssh/id_rsa.pub hadoop@hadoop-slave01:/hadoop/
+$ scp ~/.ssh/id_rsa.pub hadoop@hadoop-slave02:/hadoop/
+```
+###### 7.3.2:接着在hadoop-slave01、hadoop-slave02主机上将hadoop-master的公钥加入各自authorized_keys(用户公钥):
+```
+$ cat /hadoop/id_rsa.pub >> ~/.ssh/authorized_keys
+$ rm /hadoop/id_rsa.pub
+```
+###### 7.3.3: 集群Master免密码ssh登录Slave测试:
+```
+$ ssh hadoop-slave01
+$ ssh hadoop-slave02
+```
+###### 注: 如果Master主机和Slave主机的用户名不一样，还需要在Master修改~/.ssh/config文件，如果没有此文件，自己创建文件（此处无）。
+```
+Host hadoop-master
+  user hadoop1
+Host hadoop-slave01
+  user hadoop2
+```
 
 
 
