@@ -258,7 +258,7 @@ This command was run using /hadoop/bin/hadoop-2.9.0/share/hadoop/common/hadoop-c
 ---
 #### 温馨提示：此处192.168.1.203（此处虚拟机），配置已全部完成，现在备份主机（192.168.1.203）镜像导入204和205其他两台主机（此处虚拟机：VirtualBox-5.1.30）！
 #### 7: 主机备份的镜像导入其他两台从主机（203为主）
-##### 7.1: 修改204和205的ip和hostname：|192.168.1.204 (hadoop-slave01), |192.168.1.205 (hadoop-slave02)，重启！
+##### 7.1: 修改204和205的ip和hostname：192.168.1.204 (hadoop-slave01), 192.168.1.205 (hadoop-slave02)，重启！
 ##### 7.2: ping双方的ip测试网络连通性(例: 192.168.1.203 (hadoop-master)):
 ```
 $ ping 192.168.1.201
