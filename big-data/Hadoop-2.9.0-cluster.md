@@ -261,8 +261,8 @@ This command was run using /hadoop/bin/hadoop-2.9.0/share/hadoop/common/hadoop-c
 ##### 7.1: 修改204和205的ip和hostname：192.168.1.204 (hadoop-slave01), 192.168.1.205 (hadoop-slave02)，重启！
 ##### 7.2: ping双方的ip测试网络连通性(例: 192.168.1.203 (hadoop-master)):
 ```
-$ ping 192.168.1.201
-$ ping 192.168.1.202
+$ ping 192.168.1.204
+$ ping 192.168.1.205
 $ ping hadoop-slave01
 $ ping hadoop-slave02
 ```
