@@ -520,6 +520,7 @@ hadoop-slave01: starting nodemanager, logging to /hadoop/bin/hadoop-2.9.0/logs/y
 hadoop-slave02: starting nodemanager, logging to /hadoop/bin/hadoop-2.9.0/logs/yarn-root-nodemanager-hadoop-slave02.out
 ```
 ### 附录3：关闭Hadoop集群: $ /hadoop/bin/hadoop-2.9.0/sbin/stop-all.sh
+```
 This script is Deprecated. Instead use stop-dfs.sh and stop-yarn.sh
 Stopping namenodes on [hadoop-master]
 hadoop-master: stopping namenode
@@ -534,7 +535,7 @@ hadoop-slave01: stopping nodemanager
 hadoop-slave02: nodemanager did not stop gracefully after 5 seconds: killing with kill -9
 hadoop-slave01: nodemanager did not stop gracefully after 5 seconds: killing with kill -9
 no proxyserver to stop
-
+```
 ### 附录4：Web文件上传日志: $ tail -f /hadoop/bin/hadoop-2.9.0/logs/hadoop-root-namenode-hadoop-master.log
 ```
 2017-11-19 19:06:13,169 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741825_1001, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/11111.txt._COPYING_
