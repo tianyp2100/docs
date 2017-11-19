@@ -39,9 +39,10 @@ $ hostname
 #### 1.6. 修改主机名称:
 ```
 $ vim /etc/hostname
+hadoop-master
 $ reboot
 ```
-###### 注：主机名称，为一个自定义字符串。重启生效。
+###### 注：主机名称，为一个自定义字符串,此处为: hadoop-master。重启生效。
 #### 1.7. 配置ip地址和对应主机名(三台主机添加同样的配置):
 ```
 $ vim /etc/hosts
