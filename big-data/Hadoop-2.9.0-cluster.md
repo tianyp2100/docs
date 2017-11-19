@@ -298,7 +298,79 @@ $ /hadoop/bin/hadoop-2.9.0/sbin/start-all.sh
 ```
 $ /hadoop/bin/hadoop-2.9.0/sbin/stop-all.sh
 ```
-
+#### 11: 运行后，测试
+##### 11.1: Java进程，在hadoop-master、hadoop-slave01、hadoop-slave02运行jps命令（显示当前所有java进程pid）
+```
+root@hadoop-master:/home/server# jps
+1346 NameNode
+1561 SecondaryNameNode
+2009 Jps
+1738 ResourceManager
+root@hadoop-slave01:/home/server# jps
+1718 Jps
+1435 DataNode
+1551 NodeManager
+root@hadoop-slave02:/home/server# jps
+1651 Jps
+1371 DataNode
+1487 NodeManager
+```
+##### 11.2: 端口:
+root@hadoop-master:/home/server# netstat -tunlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:50070           0.0.0.0:*               LISTEN      1346/java       
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      801/sshd        
+tcp        0      0 192.168.1.203:9000      0.0.0.0:*               LISTEN      1346/java       
+tcp        0      0 0.0.0.0:50090           0.0.0.0:*               LISTEN      1561/java       
+tcp6       0      0 :::22                   :::*                    LISTEN      801/sshd        
+tcp6       0      0 192.168.1.203:8088      :::*                    LISTEN      1738/java       
+tcp6       0      0 192.168.1.203:8030      :::*                    LISTEN      1738/java       
+tcp6       0      0 192.168.1.203:8031      :::*                    LISTEN      1738/java       
+tcp6       0      0 192.168.1.203:8032      :::*                    LISTEN      1738/java       
+tcp6       0      0 192.168.1.203:8033      :::*                    LISTEN      1738/java  
+root@hadoop-slave01:/home/server# netstat -tunlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      823/sshd        
+tcp        0      0 0.0.0.0:50010           0.0.0.0:*               LISTEN      1435/java       
+tcp        0      0 0.0.0.0:50075           0.0.0.0:*               LISTEN      1435/java       
+tcp        0      0 127.0.0.1:36035         0.0.0.0:*               LISTEN      1435/java       
+tcp        0      0 0.0.0.0:50020           0.0.0.0:*               LISTEN      1435/java       
+tcp6       0      0 :::32979                :::*                    LISTEN      1551/java       
+tcp6       0      0 :::22                   :::*                    LISTEN      823/sshd        
+tcp6       0      0 :::13562                :::*                    LISTEN      1551/java       
+tcp6       0      0 :::8040                 :::*                    LISTEN      1551/java       
+tcp6       0      0 :::8042                 :::*                    LISTEN      1551/java  
+root@hadoop-slave02:/home/server# netstat -tunlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      791/sshd        
+tcp        0      0 0.0.0.0:50010           0.0.0.0:*               LISTEN      1371/java       
+tcp        0      0 0.0.0.0:50075           0.0.0.0:*               LISTEN      1371/java       
+tcp        0      0 0.0.0.0:50020           0.0.0.0:*               LISTEN      1371/java       
+tcp        0      0 127.0.0.1:37261         0.0.0.0:*               LISTEN      1371/java       
+tcp6       0      0 :::22                   :::*                    LISTEN      791/sshd        
+tcp6       0      0 :::13562                :::*                    LISTEN      1487/java       
+tcp6       0      0 :::8040                 :::*                    LISTEN      1487/java       
+tcp6       0      0 :::8042                 :::*                    LISTEN      1487/java       
+tcp6       0      0 :::41422                :::*                    LISTEN      1487/java  
+##### 11.3: Web UI访问: 查看 NameNode 和DataNode信息，还可以在线查看HDFS中的文件:
+```
+http://192.168.1.203:50070
+http://192.168.1.204:50075
+http://192.168.1.205:50075
+http://hadoop-master:50070
+http://hadoop-slave01:50075
+http://hadoop-slave02:50075
+```
+注:若windows系统则修改文件: 
+```
+C:\Windows\System32\drivers\etc\hosts
+192.168.1.200       hadoop-master    
+192.168.1.201       hadoop-slave01   
+192.168.1.202       hadoop-slave02  
+```
 
 
 
