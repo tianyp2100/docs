@@ -316,6 +316,7 @@ root@hadoop-slave02:/home/server# jps
 1487 NodeManager
 ```
 ##### 11.2: 端口:
+```
 root@hadoop-master:/home/server# netstat -tunlp
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
@@ -355,6 +356,7 @@ tcp6       0      0 :::13562                :::*                    LISTEN      
 tcp6       0      0 :::8040                 :::*                    LISTEN      1487/java       
 tcp6       0      0 :::8042                 :::*                    LISTEN      1487/java       
 tcp6       0      0 :::41422                :::*                    LISTEN      1487/java  
+```
 ##### 11.3: Web UI访问: 查看 NameNode 和DataNode信息，还可以在线查看HDFS中的文件:
 ```
 http://192.168.1.203:50070
