@@ -22,7 +22,7 @@ http://hadoop.apache.org/docs/r1.0.4/cn/
 hadoop-2.9.0.tar.gz
 jdk-8u121-linux-x64.tar.gz
 ```
-#### 2.5: ubuntu14.04.5操作系统安装[Ubuntu-14.04.5 LTS trusty](https://github.com/loveshareme/docs/blob/master/Ubuntu-14.04.5%20LTS%20trusty.md)
+#### 2.5: Ubuntu14.04.5操作系统安装，[Ubuntu-14.04.5 LTS trusty](https://github.com/loveshareme/docs/blob/master/Ubuntu-14.04.5%20LTS%20trusty.md)
 ### 3:安装hadoop所有必需依赖软件
 #### 3.1: 安装jdk（JavaTM1.5.x+），建议选择Sun公司发行的Java版本，[Jdk1.8.0_121](https://github.com/loveshareme/docs/blob/master/server-software/Jdk1.8.0_121.md)
 ##### 3.1.1: Java的jdk安装包jdk-8u121-linux-x64.tar.gz解压
