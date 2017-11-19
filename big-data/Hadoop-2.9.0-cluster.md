@@ -23,7 +23,7 @@ hadoop-2.9.0.tar.gz
 jdk-8u121-linux-x64.tar.gz
 ```
 ### 3:安装hadoop所有必需依赖软件
-#### 3.1: 安装jdk（JavaTM1.5.x+），建议选择Sun公司发行的Java版本
+#### 3.1: 安装jdk（JavaTM1.5.x+），建议选择Sun公司发行的Java版本，[Jdk1.8.0_121.md](https://github.com/loveshareme/docs/blob/master/server-software/Jdk1.8.0_121.md)
 ##### 3.1.1: Java的jdk安装包jdk-8u121-linux-x64.tar.gz解压
 ```
 $ tar zxvf jdk-8u121-linux-x64.tar.gz -C /usr/local
