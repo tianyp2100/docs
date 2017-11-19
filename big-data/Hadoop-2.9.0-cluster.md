@@ -2,12 +2,55 @@ Hadoop-2.9.0集群安装
 ================================
 ### 1.安装说明
 #### 1.1: 安装参数: ubuntu: 14.04.5; hadoop: 2.9.0; jdk: 1.8.0_121
-#### 1.2: 配置集群机器：三台主机（或虚拟机）搭建分布式集群环境(Ubuntu-14.04.5)(同一局域网):
+#### 1.2: 配置集群机器：三台主机（或虚拟机）搭建分布式集群环境(Ubuntu-14.04.5)(同一局域网)(可先准备一台):
 |ip|hostname|comment
 |---|---|---
 |192.168.1.203| hadoop-master| Master
 |192.168.1.204| hadoop-slave01| Slave 01    
 |192.168.1.205| hadoop-slave02| Slave 02  
+#### 1.3. 查看ip: 
+```
+$ ifconfig
+```
+###### 注：inet addr:192.168.1.203
+#### 1.4. 配置ip:
+```
+$ vim /etc/network/interfaces
+auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet static
+address 192.168.1.203
+netmask 255.255.255.0
+gateway 192.168.1.1
+```
+```
+$ vim /etc/resolvconf/resolv.conf.d/base
+nameserver 192.168.1.1
+nameserver 8.8.8.8
+```
+```
+/etc/init.d/networking restart
+```
+#### 1.5. 查看主机名称:
+```
+$ hostname
+```
+#### 1.6. 修改主机名称:
+```
+$ vim /etc/hostname
+$ reboot
+```
+###### 注：主机名称，为一个自定义字符串。重启生效。
+#### 1.7. 配置ip地址和对应主机名(三台主机添加同样的配置):
+```
+$ vim /etc/hosts
+127.0.0.1 localhost
+192.168.1.203 hadoop-master
+192.168.1.204 hadoop-slave01
+192.168.1.205 hadoop-slave02
+```
+---
 #### 温馨提示：只准备一台机器192.168.1.203（此处虚拟机），以下操作先在203上完成，最后备份主机镜像导入修改ip为集群！
 ### 2:下载安装软件包
 #### 2.1: hadoop安装包下载地址
