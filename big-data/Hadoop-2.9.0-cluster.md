@@ -277,7 +277,7 @@ $ scp ~/.ssh/id_rsa.pub hadoop@hadoop-slave02:/hadoop/
 $ cat /hadoop/id_rsa.pub >> ~/.ssh/authorized_keys
 $ rm /hadoop/id_rsa.pub
 ```
-###### 7.3.3: 集群Master免密码ssh登录Slave测试:
+###### 7.3.3: 集群Master免密码ssh登录Slave测试（hadoop-master上执行）:
 ```
 $ ssh hadoop-slave01
 $ ssh hadoop-slave02
