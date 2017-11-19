@@ -1,4 +1,4 @@
-Hadoop-2.9.0集群安装
+Ubuntu-14.04.5搭建Hadoop-2.9.0分布式集群环境
 ================================
 ### 1.安装说明
 #### 1.1: 安装参数: ubuntu: 14.04.5; hadoop: 2.9.0; jdk: 1.8.0_121
@@ -556,7 +556,7 @@ no proxyserver to stop
 2017-11-19 19:12:40,722 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741835_1011, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
 2017-11-19 19:12:41,380 INFO org.apache.hadoop.hdfs.StateChange: DIR* completeFile: /test1/卑鄙的我3_神偷奶爸.mp4 is closed by DFSClient_NONMAPREDUCE_-934323569_29
 ```
-### 附录4：帮助文档5: $ hadoop --help
+### 附录5：帮助文档5: $ hadoop --help
 ```
 Usage: hadoop [--config confdir] [COMMAND | CLASSNAME]
   CLASSNAME            run the class named CLASSNAME
@@ -578,7 +578,7 @@ Usage: hadoop [--config confdir] [COMMAND | CLASSNAME]
 
 Most commands print help when invoked w/o parameters.
 ```
-### 附录5：帮助文档2: $ hadoop fs --help
+### 附录6：帮助文档2: $ hadoop fs --help
 ```
 --help: Unknown command
 Usage: hadoop fs [generic options]
