@@ -421,5 +421,216 @@ $ hadoop fs -du -h /test1
 1.4 K  /test1/11111.txt
 1.1 G  /test1/卑鄙的我3_神偷奶爸.mp4
 ```
+### 附录1：格式化分布式文件系统: $ /hadoop/bin/hadoop-2.9.0/bin/hdfs namenode -format
+```
+17/11/19 18:27:17 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = hadoop-master/192.168.1.203
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 2.9.0
+STARTUP_MSG:   classpath = /hadoop/bin/hadoop-2.9.0/etc/hadoop:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/nimbus-jose-jwt-3.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/zookeeper-3.4.6.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jersey-json-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/servlet-api-2.5.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jersey-core-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/paranamer-2.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jersey-server-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/log4j-1.2.17.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-cli-1.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/httpclient-4.5.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/json-smart-1.1.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jsch-0.1.54.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/api-asn1-api-1.0.0-M20.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jets3t-0.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/api-util-1.0.0-M20.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jsr305-3.0.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jsp-api-2.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/slf4j-api-1.7.25.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/hadoop-auth-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/mockito-all-1.8.5.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/netty-3.6.2.Final.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-lang3-3.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-beanutils-1.7.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jcip-annotations-1.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/hadoop-annotations-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/gson-2.2.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/guava-11.0.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/curator-framework-2.7.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-lang-2.6.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/junit-4.11.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-math3-3.1.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jettison-1.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/curator-client-2.7.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/xmlenc-0.52.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/curator-recipes-2.7.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/stax-api-1.0-2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/httpcore-4.4.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/xz-1.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-digester-1.8.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-logging-1.1.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/avro-1.7.7.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-io-2.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/asm-3.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/java-xmlbuilder-0.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/htrace-core4-4.1.0-incubating.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-codec-1.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jetty-sslengine-6.1.26.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-net-3.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-configuration-1.6.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/apacheds-i18n-2.0.0-M15.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/snappy-java-1.0.5.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jetty-6.1.26.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/stax2-api-3.1.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jaxb-api-2.2.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/jetty-util-6.1.26.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/activation-1.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-beanutils-core-1.8.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-collections-3.2.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/commons-compress-1.4.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/hamcrest-core-1.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/lib/woodstox-core-5.0.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/hadoop-nfs-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/hadoop-common-2.9.0-tests.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/common/hadoop-common-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/servlet-api-2.5.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jersey-core-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jackson-annotations-2.7.8.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/okhttp-2.4.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jersey-server-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/okio-1.4.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/hadoop-hdfs-client-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jsr305-3.0.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jackson-databind-2.7.8.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jackson-core-2.7.8.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/netty-3.6.2.Final.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/guava-11.0.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/commons-lang-2.6.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/xmlenc-0.52.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/commons-io-2.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/asm-3.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/xercesImpl-2.9.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/htrace-core4-4.1.0-incubating.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/commons-codec-1.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/netty-all-4.0.23.Final.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jetty-6.1.26.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/xml-apis-1.3.04.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/jetty-util-6.1.26.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/hadoop-hdfs-native-client-2.9.0-tests.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/hadoop-hdfs-2.9.0-tests.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/hadoop-hdfs-client-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/hadoop-hdfs-nfs-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/hadoop-hdfs-client-2.9.0-tests.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/hadoop-hdfs-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/hdfs/hadoop-hdfs-native-client-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/nimbus-jose-jwt-3.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/zookeeper-3.4.6.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/curator-test-2.7.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jersey-json-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/servlet-api-2.5.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jersey-core-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/paranamer-2.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jersey-server-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/ehcache-3.3.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/log4j-1.2.17.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-cli-1.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/guice-servlet-3.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/java-util-1.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/httpclient-4.5.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/json-smart-1.1.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jsch-0.1.54.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/api-asn1-api-1.0.0-M20.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jets3t-0.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/api-util-1.0.0-M20.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jsr305-3.0.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jsp-api-2.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jackson-core-asl-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/fst-2.50.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/mssql-jdbc-6.2.1.jre7.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/netty-3.6.2.Final.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jackson-xc-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/leveldbjni-all-1.8.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-math-2.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jersey-client-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-lang3-3.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-beanutils-1.7.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/zookeeper-3.4.6-tests.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jcip-annotations-1.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/gson-2.2.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/guava-11.0.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/curator-framework-2.7.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/javassist-3.18.1-GA.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-lang-2.6.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-math3-3.1.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jackson-jaxrs-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jettison-1.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/curator-client-2.7.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/xmlenc-0.52.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/curator-recipes-2.7.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/stax-api-1.0-2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/httpcore-4.4.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/xz-1.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-digester-1.8.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/javax.inject-1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-logging-1.1.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/avro-1.7.7.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/json-io-2.5.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-io-2.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/asm-3.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/metrics-core-3.0.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/java-xmlbuilder-0.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jaxb-impl-2.2.3-1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/geronimo-jcache_1.0_spec-1.0-alpha-1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/htrace-core4-4.1.0-incubating.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-codec-1.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jetty-sslengine-6.1.26.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-net-3.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-configuration-1.6.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/apacheds-i18n-2.0.0-M15.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/HikariCP-java7-2.4.12.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jackson-mapper-asl-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/snappy-java-1.0.5.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jersey-guice-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jetty-6.1.26.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/aopalliance-1.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/guice-3.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/stax2-api-3.1.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jaxb-api-2.2.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/jetty-util-6.1.26.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/activation-1.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/protobuf-java-2.5.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-beanutils-core-1.8.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-collections-3.2.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/commons-compress-1.4.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/lib/woodstox-core-5.0.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-client-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-common-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-router-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-registry-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-timeline-pluginstorage-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-api-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-common-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-web-proxy-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-nodemanager-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/yarn/hadoop-yarn-server-tests-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/jersey-core-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/paranamer-2.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/jersey-server-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/log4j-1.2.17.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/guice-servlet-3.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/jackson-core-asl-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/netty-3.6.2.Final.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/leveldbjni-all-1.8.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/hadoop-annotations-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/junit-4.11.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/xz-1.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/javax.inject-1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/avro-1.7.7.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/commons-io-2.4.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/asm-3.2.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/snappy-java-1.0.5.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/jersey-guice-1.9.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/aopalliance-1.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/guice-3.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/protobuf-java-2.5.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/commons-compress-1.4.1.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-client-app-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-client-common-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.9.0-tests.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-2.9.0.jar:/hadoop/bin/hadoop-2.9.0/contrib/capacity-scheduler/*.jar
+STARTUP_MSG:   build = https://git-wip-us.apache.org/repos/asf/hadoop.git -r 756ebc8394e473ac25feac05fa493f6d612e6c50; compiled by 'arsuresh' on 2017-11-13T23:15Z
+STARTUP_MSG:   java = 1.8.0_121
+************************************************************/
+17/11/19 18:27:17 INFO namenode.NameNode: registered UNIX signal handlers for [TERM, HUP, INT]
+17/11/19 18:27:17 INFO namenode.NameNode: createNameNode [-format]
+Formatting using clusterid: CID-30e36383-87f2-48cc-bdfb-34ed5b983ee5
+17/11/19 18:27:20 INFO namenode.FSEditLog: Edit logging is async:true
+17/11/19 18:27:20 INFO namenode.FSNamesystem: KeyProvider: null
+17/11/19 18:27:20 INFO namenode.FSNamesystem: fsLock is fair: true
+17/11/19 18:27:20 INFO namenode.FSNamesystem: Detailed lock hold time metrics enabled: false
+17/11/19 18:27:20 INFO namenode.FSNamesystem: fsOwner             = root (auth:SIMPLE)
+17/11/19 18:27:20 INFO namenode.FSNamesystem: supergroup          = supergroup
+17/11/19 18:27:20 INFO namenode.FSNamesystem: isPermissionEnabled = true
+17/11/19 18:27:20 INFO namenode.FSNamesystem: HA Enabled: false
+17/11/19 18:27:20 INFO common.Util: dfs.datanode.fileio.profiling.sampling.percentage set to 0. Disabling file IO profiling
+17/11/19 18:27:21 INFO blockmanagement.DatanodeManager: dfs.block.invalidate.limit: configured=1000, counted=60, effected=1000
+17/11/19 18:27:21 INFO blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: The block deletion will start around 2017 Nov 19 18:27:21
+17/11/19 18:27:21 INFO util.GSet: Computing capacity for map BlocksMap
+17/11/19 18:27:21 INFO util.GSet: VM type       = 64-bit
+17/11/19 18:27:21 INFO util.GSet: 2.0% max memory 966.7 MB = 19.3 MB
+17/11/19 18:27:21 INFO util.GSet: capacity      = 2^21 = 2097152 entries
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: dfs.block.access.token.enable=false
+17/11/19 18:27:21 WARN conf.Configuration: No unit for dfs.namenode.safemode.extension(30000) assuming MILLISECONDS
+17/11/19 18:27:21 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+17/11/19 18:27:21 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.min.datanodes = 0
+17/11/19 18:27:21 INFO blockmanagement.BlockManagerSafeMode: dfs.namenode.safemode.extension = 30000
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: defaultReplication         = 3
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: maxReplication             = 512
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: minReplication             = 1
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: maxReplicationStreams      = 2
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: replicationRecheckInterval = 3000
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: encryptDataTransfer        = false
+17/11/19 18:27:21 INFO blockmanagement.BlockManager: maxNumBlocksToLog          = 1000
+17/11/19 18:27:21 INFO namenode.FSNamesystem: Append Enabled: true
+17/11/19 18:27:22 INFO util.GSet: Computing capacity for map INodeMap
+17/11/19 18:27:22 INFO util.GSet: VM type       = 64-bit
+17/11/19 18:27:22 INFO util.GSet: 1.0% max memory 966.7 MB = 9.7 MB
+17/11/19 18:27:22 INFO util.GSet: capacity      = 2^20 = 1048576 entries
+17/11/19 18:27:22 INFO namenode.FSDirectory: ACLs enabled? false
+17/11/19 18:27:22 INFO namenode.FSDirectory: XAttrs enabled? true
+17/11/19 18:27:22 INFO namenode.NameNode: Caching file names occurring more than 10 times
+17/11/19 18:27:22 INFO snapshot.SnapshotManager: Loaded config captureOpenFiles: falseskipCaptureAccessTimeOnlyChange: false
+17/11/19 18:27:22 INFO util.GSet: Computing capacity for map cachedBlocks
+17/11/19 18:27:22 INFO util.GSet: VM type       = 64-bit
+17/11/19 18:27:22 INFO util.GSet: 0.25% max memory 966.7 MB = 2.4 MB
+17/11/19 18:27:22 INFO util.GSet: capacity      = 2^18 = 262144 entries
+17/11/19 18:27:22 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10
+17/11/19 18:27:22 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10
+17/11/19 18:27:22 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+17/11/19 18:27:22 INFO namenode.FSNamesystem: Retry cache on namenode is enabled
+17/11/19 18:27:22 INFO namenode.FSNamesystem: Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis
+17/11/19 18:27:22 INFO util.GSet: Computing capacity for map NameNodeRetryCache
+17/11/19 18:27:22 INFO util.GSet: VM type       = 64-bit
+17/11/19 18:27:22 INFO util.GSet: 0.029999999329447746% max memory 966.7 MB = 297.0 KB
+17/11/19 18:27:22 INFO util.GSet: capacity      = 2^15 = 32768 entries
+17/11/19 18:27:22 INFO namenode.FSImage: Allocated new BlockPoolId: BP-665037173-192.168.1.203-1511087242885
+17/11/19 18:27:23 INFO common.Storage: Storage directory /hadoop/dfs/name has been successfully formatted.
+17/11/19 18:27:23 INFO namenode.FSImageFormatProtobuf: Saving image file /hadoop/dfs/name/current/fsimage.ckpt_0000000000000000000 using no compression
+17/11/19 18:27:23 INFO namenode.FSImageFormatProtobuf: Image file /hadoop/dfs/name/current/fsimage.ckpt_0000000000000000000 of size 321 bytes saved in 0 seconds.
+17/11/19 18:27:23 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid >= 0
+17/11/19 18:27:23 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at hadoop-master/192.168.1.203
+************************************************************/
+```
+### 附录2：启动Hadoop集群: $ /hadoop/bin/hadoop-2.9.0/sbin/start-all.sh
+```
+This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+Starting namenodes on [hadoop-master]
+The authenticity of host 'hadoop-master (192.168.1.203)' can't be established.
+ECDSA key fingerprint is 1b:49:c4:67:c0:74:d4:aa:af:d4:54:ba:26:bc:2a:bd.
+Are you sure you want to continue connecting (yes/no)? yes
+hadoop-master: Warning: Permanently added 'hadoop-master,192.168.1.203' (ECDSA) to the list of known hosts.
+hadoop-master: starting namenode, logging to /hadoop/bin/hadoop-2.9.0/logs/hadoop-root-namenode-hadoop-master.out
+hadoop-slave01: starting datanode, logging to /hadoop/bin/hadoop-2.9.0/logs/hadoop-root-datanode-hadoop-slave01.out
+hadoop-slave02: starting datanode, logging to /hadoop/bin/hadoop-2.9.0/logs/hadoop-root-datanode-hadoop-slave02.out
+Starting secondary namenodes [0.0.0.0]
+The authenticity of host '0.0.0.0 (0.0.0.0)' can't be established.
+ECDSA key fingerprint is 1b:49:c4:67:c0:74:d4:aa:af:d4:54:ba:26:bc:2a:bd.
+Are you sure you want to continue connecting (yes/no)? yes
+0.0.0.0: Warning: Permanently added '0.0.0.0' (ECDSA) to the list of known hosts.
+0.0.0.0: starting secondarynamenode, logging to /hadoop/bin/hadoop-2.9.0/logs/hadoop-root-secondarynamenode-hadoop-master.out
+starting yarn daemons
+starting resourcemanager, logging to /hadoop/bin/hadoop-2.9.0/logs/yarn-root-resourcemanager-hadoop-master.out
+hadoop-slave01: starting nodemanager, logging to /hadoop/bin/hadoop-2.9.0/logs/yarn-root-nodemanager-hadoop-slave01.out
+hadoop-slave02: starting nodemanager, logging to /hadoop/bin/hadoop-2.9.0/logs/yarn-root-nodemanager-hadoop-slave02.out
+```
+### 附录3：关闭Hadoop集群: $ /hadoop/bin/hadoop-2.9.0/sbin/stop-all.sh
+This script is Deprecated. Instead use stop-dfs.sh and stop-yarn.sh
+Stopping namenodes on [hadoop-master]
+hadoop-master: stopping namenode
+hadoop-slave01: stopping datanode
+hadoop-slave02: stopping datanode
+Stopping secondary namenodes [0.0.0.0]
+0.0.0.0: stopping secondarynamenode
+stopping yarn daemons
+stopping resourcemanager
+hadoop-slave02: stopping nodemanager
+hadoop-slave01: stopping nodemanager
+hadoop-slave02: nodemanager did not stop gracefully after 5 seconds: killing with kill -9
+hadoop-slave01: nodemanager did not stop gracefully after 5 seconds: killing with kill -9
+no proxyserver to stop
 
+### 附录4：Web文件上传日志: $ tail -f /hadoop/bin/hadoop-2.9.0/logs/hadoop-root-namenode-hadoop-master.log
+```
+2017-11-19 19:06:13,169 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741825_1001, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/11111.txt._COPYING_
+2017-11-19 19:06:14,076 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: BLOCK* blk_1073741825_1001 is COMMITTED but not COMPLETE(numNodes= 0 <  minimum = 1) in file /test1/11111.txt._COPYING_
+2017-11-19 19:06:14,487 INFO org.apache.hadoop.hdfs.StateChange: DIR* completeFile: /test1/11111.txt._COPYING_ is closed by DFSClient_NONMAPREDUCE_-1894088392_1
+2017-11-19 19:10:30,011 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Number of transactions: 11 Total time for transactions(ms): 71 Number of transactions batched in Syncs: 1 Number of syncs: 10 SyncTimes(ms): 147 
+2017-11-19 19:10:30,158 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741826_1002, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:10:46,787 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741827_1003, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:11:00,641 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741828_1004, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:11:13,782 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741829_1005, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:11:27,341 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741830_1006, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:11:40,664 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Number of transactions: 27 Total time for transactions(ms): 73 Number of transactions batched in Syncs: 8 Number of syncs: 19 SyncTimes(ms): 283 
+2017-11-19 19:11:40,666 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741831_1007, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:11:56,154 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741832_1008, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:12:11,636 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741833_1009, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:12:25,754 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741834_1010, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:12:40,719 INFO org.apache.hadoop.hdfs.server.namenode.FSEditLog: Number of transactions: 39 Total time for transactions(ms): 74 Number of transactions batched in Syncs: 12 Number of syncs: 27 SyncTimes(ms): 422 
+2017-11-19 19:12:40,722 INFO org.apache.hadoop.hdfs.StateChange: BLOCK* allocate blk_1073741835_1011, replicas=192.168.1.205:50010, 192.168.1.204:50010 for /test1/卑鄙的我3_神偷奶爸.mp4
+2017-11-19 19:12:41,380 INFO org.apache.hadoop.hdfs.StateChange: DIR* completeFile: /test1/卑鄙的我3_神偷奶爸.mp4 is closed by DFSClient_NONMAPREDUCE_-934323569_29
+```
+### 附录4：帮助文档5: $ hadoop --help
+```
+Usage: hadoop [--config confdir] [COMMAND | CLASSNAME]
+  CLASSNAME            run the class named CLASSNAME
+ or
+  where COMMAND is one of:
+  fs                   run a generic filesystem user client
+  version              print the version
+  jar <jar>            run a jar file
+                       note: please use "yarn jar" to launch
+                             YARN applications, not this command.
+  checknative [-a|-h]  check native hadoop and compression libraries availability
+  distcp <srcurl> <desturl> copy file or directories recursively
+  archive -archiveName NAME -p <parent path> <src>* <dest> create a hadoop archive
+  classpath            prints the class path needed to get the
+                       Hadoop jar and the required libraries
+  credential           interact with credential providers
+  daemonlog            get/set the log level for each daemon
+  trace                view and modify Hadoop tracing settings
 
+Most commands print help when invoked w/o parameters.
+```
+### 附录5：帮助文档2: $ hadoop fs --help
+```
+--help: Unknown command
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-x] <path> ...]
+	[-expunge]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] <file>]
+	[-test -[defsz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+```
