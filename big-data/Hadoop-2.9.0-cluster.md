@@ -373,6 +373,53 @@ C:\Windows\System32\drivers\etc\hosts
 192.168.1.201       hadoop-slave01   
 192.168.1.202       hadoop-slave02  
 ```
-
+#### 12: HDFS中的文件简单操作
+##### 12.1: 查看HDFS有没有文件或文件夹，第一次查看显示为空
+```
+$ hadoop fs -ls /
+```
+##### 12.2: 在HDFS下创建test1文件夹
+```
+$ hadoop fs -mkdir /test1
+$ hadoop fs -ls /
+Found 1 items
+drwxr-xr-x   - root supergroup          0 2017-11-19 18:45 /test1
+```
+##### 12.3: 在HDFS下改变test1文件夹的拥有者
+```
+$ hadoop fs -chown -R hadoop:hadoop /test1
+$ hadoop fs -ls /
+Found 1 items
+drwxr-xr-x   - hadoop hadoop          0 2017-11-19 18:45 /test1
+```
+##### 12.4: 在HDFS下改变test1文件夹的权限
+```
+$ hadoop fs -chmod 777 /test1
+$ hadoop fs -ls /
+Found 1 items
+drwxrwxrwx   - hadoop hadoop          0 2017-11-19 18:45 /test1
+```
+##### 12.5:  在HDFS下向test1文件夹下复制“上传(put)”和“下载(get)”
+```
+$ touch 11111.txt
+$ vim 11111.txt 
+$ hadoop fs -put 11111.txt /test1
+$ hadoop fs -ls /test1
+Found 1 items
+-rw-r--r--   3 root hadoop       1421 2017-11-19 19:06 /test1/11111.txt
+$ hadoop fs -get /test1/11111.txt /home
+$ ls /home/
+11111.txt  server
+```
+##### 12.6: 在web页面的Utilities菜单下Browse the file system查看HDFS中的文件上传和下载。
+```
+$ hadoop fs -ls /test1
+Found 2 items
+-rw-r--r--   3 root   hadoop       1421 2017-11-19 19:06 /test1/11111.txt
+-rwxr-xr-x   3 dr.who hadoop 1216816138 2017-11-19 19:12 /test1/卑鄙的我3_神偷奶爸.mp4
+$ hadoop fs -du -h /test1
+1.4 K  /test1/11111.txt
+1.1 G  /test1/卑鄙的我3_神偷奶爸.mp4
+```
 
 
