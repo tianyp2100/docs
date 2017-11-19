@@ -233,6 +233,28 @@ $ vim /hadoop/bin/hadoop-2.9.0/etc/hadoop/yarn-site.xml
   </property>
 </configuration>
 ```
+#### 7: Hadoop的环境变量配置
+```
+$ vim /etc/profile
+
+#Jdk
+export JAVA_HOME=/usr/local/jdk1.8.0_121
+export CLASSPATH=$JAVA_HOME/lib:.
+#Hadoop
+export HADOOP_HOME=/hadoop/bin/hadoop-2.9.0
+
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+$ source /etc/profile
+
+$ hadoop version
+Hadoop 2.9.0
+Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 756ebc8394e473ac25feac05fa493f6d612e6c50
+Compiled by arsuresh on 2017-11-13T23:15Z
+Compiled with protoc 2.5.0
+From source with checksum 0a76a9a32a5257331741f8d5932f183
+This command was run using /hadoop/bin/hadoop-2.9.0/share/hadoop/common/hadoop-common-2.9.0.jar
+```
 ---
 #### 温馨提示：此处192.168.1.203（此处虚拟机），配置已全部完成，现在备份主机（192.168.1.203）镜像导入204和205其他两台主机（此处虚拟机：VirtualBox-5.1.30）！
 
