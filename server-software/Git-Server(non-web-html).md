@@ -47,7 +47,39 @@ git push --set-upstream origin develop
 ###### ok.
 
 
-###### 备注:
+##### 备注:
+###### 1.生成SSH key: 
+###### 注：若使用密码，则输入密码；
+###### 注：若不需要密码，则按三下“回撤”键，即可。
 ```
-$ ssh-keygen -t rsa -C "youremail@example.com"
+# ssh-keygen -t rsa -C "youremail@example.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:lz3J6K88aUD3mYRhzWfHiC9mscxm7I99llCq4qPfE34 youremail@example.com
+The key's randomart image is:
++---[RSA 2048]----+
+|         o . o   |
+|        o = + o  |
+|       . * * .   |
+|      . o &=..   |
+|     . .S@++=    |
+|      o oo=  .   |
+|     . + o.+     |
+|    o.+.Eo* .    |
+|  .+ooo=+o..     |
++----[SHA256]-----+
+
+# cd ~/.ssh/
+# ls -la
+total 16
+drwx------  2 root root 4096 Aug 19 13:06 .
+dr-xr-x---. 7 root root 4096 Aug 13 23:11 ..
+-rw-------  1 root root    0 Aug  4 23:25 authorized_keys
+-rw-------  1 root root 1675 Aug 19 13:06 id_rsa
+-rw-r--r--  1 root root  402 Aug 19 13:06 id_rsa.pub
 ```
