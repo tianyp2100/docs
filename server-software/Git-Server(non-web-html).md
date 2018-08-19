@@ -45,3 +45,9 @@ git commit -m "first develop branch commit."
 git push --set-upstream origin develop 
 ```
 ###### ok.
+
+
+###### 备注:
+```
+$ ssh-keygen -t rsa -C "youremail@example.com"
+```
