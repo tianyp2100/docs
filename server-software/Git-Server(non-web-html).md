@@ -76,10 +76,8 @@ The key's randomart image is:
 
 # cd ~/.ssh/
 # ls -la
-total 16
-drwx------  2 root root 4096 Aug 19 13:06 .
-dr-xr-x---. 7 root root 4096 Aug 13 23:11 ..
 -rw-------  1 root root    0 Aug  4 23:25 authorized_keys
 -rw-------  1 root root 1675 Aug 19 13:06 id_rsa
 -rw-r--r--  1 root root  402 Aug 19 13:06 id_rsa.pub
 ```
+###### 注：id_rsa:私钥，不可告诉任何人；id_rsa.pub:公钥，内容一般提供给ssh通讯的对方。
