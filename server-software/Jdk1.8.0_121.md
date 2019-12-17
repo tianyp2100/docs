@@ -9,6 +9,8 @@ use: jdk-8u121-linux-x64.tar.gz
 ```
 tar zxvf jdk-8u121-linux-x64.tar.gz
 cp -R jdk1.8.0_121/ /usr/local
+或
+tar zxvf jdk-8u121-linux-x64.tar.gz -C /usr/local/
 ```
 #### 3:修改环境变量
 ```
