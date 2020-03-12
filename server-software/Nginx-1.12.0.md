@@ -7,7 +7,7 @@ http://nginx.org/en/download.html
 ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
 ```
 ```
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz
+wget ftp://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz
 wget https://nginx.org/download/nginx-1.12.0.tar.gz
 ```
 #### 3:安装依赖
